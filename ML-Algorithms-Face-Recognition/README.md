@@ -1,13 +1,11 @@
 # face-recognition
-implemented a simple face recognition using some classic classifiers
+implemented a simple face recognition using some classic classifiers  
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
-### main.m   
+## main.m   
 This file includes all the different ways to form training data anf testing data    
 It also contain all calls of functions     
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-### Bayes.m   
+## Bayes.m   
 accuracy = Bayes(Train_D_P,Test_D_P,L_Test)   
 
 This function implement the Bayes' classifier using the Maximum Likelihood   
@@ -16,9 +14,8 @@ Train_D_P - training data (each column is an observation)
 Test_D_P - testing data (each column is an observation)  
 L_Test - true label of testing data  
 accuracy - accuracy of the classifier (the value is within (0,1))   
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-### K_NN.m   
+   
+## K_NN.m   
 accuracy = K_NN(Train_D_P,Test_D_P,L_Test,K)   
 
 This function implement the k-NN rule   
@@ -29,8 +26,7 @@ L_Test - true label of testing data
 K - a designed parameter which decides the number of neighborhood  
 accuracy - accuracy of the classifier (the value is within (0,1))  
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-### LDA.m  
+## LDA.m  
 \[Test_D_P,Train_D_P\] = LDA(Train_Data,Test_Data,N_C)  
 
 This function implement the Linear Discriminant Analysis  
@@ -40,9 +36,8 @@ Test_Data - The testing data (Must be reshaped to a vector)
 N_C - Number of classes in the dataset  
 Test_D_P - The projected training data (each column is an observation)  
 Train_D_P - The projected testing data (each column is an observation)  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-### PCA.m  
+  
+## PCA.m  
 \[Test_D_P,Train_D_P\] = PCA(Train_Data,Test_Data,lamda)  
 
 This function implement the Principle Component Analysis   
@@ -53,9 +48,8 @@ Lamda - A designed parameter to decide the number of dimensions
              Lager lamda meas more dimensions (The values should be within (0,1))  
 Test_D_P - The projected training data (each column is an observation)  
 Train_D_P - The projected testing data (each column is an observation)  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
-### Kernel_SVM.m  
+    
+## Kernel_SVM.m  
 \[res_val,accuracy,x,y,alpha,bias\] = Kernel_SVM(Train_D_P,Test_D_P,L_Train,L_Test,C)  
 
 This function implement kernel SVM with two different kernels(RBF and Polynomial).The change of kernel and parameters must be done in the function   
@@ -71,9 +65,8 @@ x - support vectors
 y - the corresponding true label of support vectors  
 alpha - the weights of different support vectors in the final classifier  
 bias - bias term in final classifier  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-### kernel.m  
+  
+## kernel.m  
  K = kernel(x1,x2,func_type,kernal_params)   
 
 This function implement three different kernels which are  
@@ -87,9 +80,8 @@ func_type - 'l' Linear Kernel
             'g' Radial Basis Function (RBF) Kernel   
             'p' Polynominal Kernel   
 kernel_params - kernel parameter  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
-### Boosted_SVM.m  
+ 
+## Boosted_SVM.m  
 \[accuracy,r,alpha_opt,res,Wn_N\] = Boosted_SVM(Train_D_P,Test_D_P,L_Train,L_Test,mu)  
 
 This function implement boosted SVM  
@@ -104,9 +96,8 @@ accuracy - accurace of the classifier (a number between 0 and 1)
 r - perdicted label  
 alpha_opt - optimal of wieghts of different weak SVM classifier  
 res - the value before take the sign function  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-### WSVM.m   
+  
+## WSVM.m   
 \[H,x,y,alpha,bias\] = WSVM(Train_Data,L_Train,Wn,mu)  
 
 This function implement a weak SVM based on part of the training data   
@@ -120,9 +111,8 @@ x - support vectors
 y - the corresponding true label of support vectors  
 alpha - the weights of different support vectors in the final classifier  
 bias - bias term in final classifier   
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-### Test_WSVM.m  
+ 
+## Test_WSVM.m  
 res = Test_WSVM(x,y,alpha,bias,Test_Data,L_Test)  
 
 This function test the weak SVM on the training data   
@@ -134,5 +124,3 @@ bias - bias term in final classifier
 Test_Data - the data to test the weak SVM  
 L_Test - the correponding true label of the data  
 res - the resulting value before take the sign function  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
